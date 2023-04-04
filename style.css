@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+  /* ### Primary */
+
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  
+  /* ### Neutral */
+  
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  
+  /* ### Gradients */
+  
+  --Linear-1:135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --Linear-2:135deg, hsl(0, 80%, 86%),hsl(0, 74%, 74%);
+}
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,*::before,*::after{
+  box-sizing: inherit;
+  margin:0;
+  outline: none;
+  padding: 0;
+
+}
+body{
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  background:linear-gradient(var(--Linear-1));
+  min-height: 100vh;
+}
+
+
+.container{
+ display: grid;
+ justify-content: center;
+ align-content: center;
+ grid-template-columns: 1fr;
+  margin-inline: auto;
+  min-height: 100vh;
+}
+img{
+width: 100%;
+
+}
+.logo{
+  width: clamp(18rem,25vw,25rem);
+  padding: clamp(4rem,4.5vw,5rem)  clamp(3.5rem,4.5vw,4rem);
+  animation:goingright 2s ease-in-out;
+}
+@keyframes goingright {
+  0%{
+    opacity: 0;
+    transform:translateX(-10rem);
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+    transform:translateX(0);
+  }
+  
+}
+.img-mobile{
+  height:clamp(25rem,60vw,50rem);
+  object-fit: cover;
+
+}
+.left{
+  align-self: stretch;
+}
+
+.content{
+  padding: clamp(5rem,7vw,6rem)  clamp(3.5rem,4.5vw,4rem);
+  
+}
+h1{
+  font-size: clamp(5rem,5vw,6rem);
+  text-transform: uppercase;
+  color: var(--Dark-Grayish-Red);
+  font-weight: 400;
+  letter-spacing:clamp(0.5rem,1.5vw,1rem);
+  animation:goingright 2s ease-in-out;
+}
+@keyframes goingright {
+  0%{
+    opacity: 0;
+    transform:translateX(-10rem);
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+    transform:translateX(0);
+  }
+  
+}
+h1 span{
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+  
+}
+p{
+  font-size:clamp(1.4rem,2.5vw,1.8rem) ;
+  font-weight: 600;
+  color: var(--Desaturated-Red);
+  line-height: 1.6;
+  animation:goingleft 2s ease-in-out;
+}
+@keyframes goingleft {
+  0%{
+    opacity: 0;
+    transform:translateX(10rem);
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+    transform:translateX(0);
+  }
+  
+}
+h1,p{
+  padding-bottom: clamp(2.5rem,3.5vw,3rem);
+}
+/* form */
+form{
+  position: relative;
+  margin:clamp(2rem,4vw,3rem) 0;
+  animation:goingleft 2s ease-in-out;
+}
+@keyframes goingleft {
+  0%{
+    opacity: 0;
+    transform:translateX(10rem);
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+    transform:translateX(0);
+  }
+  
+}
+input::placeholder{
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+  opacity: 0.6;
+
+}
+input,.btn{
+  padding:clamp(1rem,2vw,1.5rem) clamp(2rem,3vw,3rem);
+  border-radius: 5rem;
+  height:clamp(4rem,5vw,4.5rem);
+
+}
+.btn,
+i.fa-sharp,
+.error-message{
+  position: absolute;
+  
+}
+
+input{
+  width: 100%;
+  border-radius: 5rem;
+  border: 1px solid var(--Desaturated-Red);
+  color: var(--Desaturated-Red);
+  background-color: #fff;
+}
+ form.error input{
+  border: 1px solid rgb(234, 71, 71);
+}
+.btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  background:linear-gradient(var(--Linear-2));
+  border: none;
+ 
+}
+.btn:hover{
+  cursor: pointer;
+  background: linear-gradient(135deg, hsl(0, 80%, 91%),hsl(0, 74%, 80%));
+  box-shadow: 0 1rem 30px rgba(0,0,0,0.3);
+  transform: translate(0.5rem);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+}
+i{
+  font-size: clamp(1.8rem,2vw,2rem);
+  text-align: center;
+}
+i.fa-sharp{
+  top: 50%;
+  left:calc(76% + .5%);
+  transform: translate(-50%,-50%);
+}
+
+i.fa-sharp,
+.error-message{
+  color: rgb(234, 71, 71);
+  
+}
+.error-message{
+  bottom:-45%;
+  left:0;
+  padding-left: clamp(2rem,3vw,3rem);
+  font-size:clamp(1.2rem,1.5vw,1.4rem)
+
+}
+
+i.fa-sharp,
+.error-message,
+.img-desktop{
+  display: none;
+}
+form.error i.fa-sharp,
+form.error .error-message{
+  display: block;
+}
+
+@media (min-width:800px) {
+  .container{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .img-mobile{
+    display: none;
+  }
+  .left{
+    width:100% ;
+    height: 100%;
+    margin-inline: auto;
+    text-align: left;
+    align-self: center;
+    position: relative;
+    padding: 5rem 7rem;
+  }
+  .left::before{
+    content: '';
+    background: url(./images/bg-pattern-desktop.svg)no-repeat left top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+ 
+
+  .img-desktop{
+    display: block;
+   min-height: 100vh;
+  }
+}
